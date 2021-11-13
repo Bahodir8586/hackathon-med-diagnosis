@@ -3,19 +3,18 @@ import SelectComponent from '../selectComponent.jsx';
 
 const ratings = [
   {
+    value: '0',
+    name: '0 - 5',
+  },
+  {
     value: '2',
-    name: '0 - 2',
+    name: '2 - 5',
   },
   {
     value: '4',
-    name: '2 - 4',
-  },
-  {
-    value: '5',
     name: '4 - 5',
   },
 ];
-
 const locations = [
   {
     name: '0 - 1 km',

@@ -24,7 +24,6 @@ const ratings = [
     name: 5,
   },
 ];
-
 const hospitals = [
   {
     name: 'Hospital 1',
@@ -87,7 +86,7 @@ export default function AddReviewForm({ submitForm }) {
               onChange={(value) => setDoctor(value)}
             />
             <SelectComponent
-              label={'Role'}
+              label={'Rating'}
               options={ratings}
               value={rating}
               onChange={(value) => setRating(value)}
