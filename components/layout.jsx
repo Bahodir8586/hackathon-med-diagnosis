@@ -38,7 +38,7 @@ const Layout = ({ pageTitle, ...props }) => {
       current: false,
     },
     {
-      name: 'Reviews',
+      name: 'Add Review',
       href: '/addReview',
       icon: DocumentAddIcon,
       current: false,
@@ -46,7 +46,15 @@ const Layout = ({ pageTitle, ...props }) => {
   ]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const updatedNav = [...navigation];
+    const curActive = updatedNav.find((el) => el.current);
+    const curClicked = updatedNav.find((el) => el.href === router.pathname);
+    curActive.current = false;
+    curClicked.current = true;
+    setNavigation(updatedNav);
+    console.log(router.pathname);
+  }, [navigation, router.pathname]);
 
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">

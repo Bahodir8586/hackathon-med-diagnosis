@@ -1,5 +1,5 @@
-import Head from "next/head";
-import Layout from "../components/layout";
+import Head from 'next/head';
+import Layout from '../components/layout';
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
         <title>Create Next App</title>
         <meta name="description" content="Med Diagnosis" />
       </Head>
-      <Layout></Layout>
+      <Layout pageTitle={'Home'}></Layout>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Layout from "../components/layout";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
         <title>Create Next App</title>
         <meta name="description" content="Med Diagnosis" />
       </Head>
-      <main></main>
+      <Layout pageTitle={"Reviews"}></Layout>
     </div>
   );
 }
