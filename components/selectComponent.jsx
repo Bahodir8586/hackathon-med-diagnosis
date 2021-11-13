@@ -8,7 +8,6 @@ function classNames(...classes) {
 }
 
 export default function SelectComponent({ label, options, value, onChange }) {
-  console.log(value);
   return (
     <Listbox value={value} onChange={(val) => onChange(val)}>
       {({ open }) => (

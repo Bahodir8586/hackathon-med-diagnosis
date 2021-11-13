@@ -15,7 +15,7 @@ const ratings = [
     name: '4 - 5',
   },
 ];
-const locations = [
+const distances = [
   {
     name: '0 - 1 km',
     value: '1',
@@ -49,7 +49,7 @@ const prices = [
 ];
 
 export default function SortForm({ submitForm }) {
-  const [location, setLocation] = useState(locations[0]);
+  const [distance, setDistance] = useState(distances[0]);
   const [rating, setRating] = useState(ratings[0]);
   const [price, setPrice] = useState(prices[0]);
   return (
@@ -57,7 +57,7 @@ export default function SortForm({ submitForm }) {
       className="max-w-3xl mx-auto space-y-8 divide-y divide-gray-200 border p-8 bg-gray-50 shadow-md rounded-lg"
       onSubmit={(e) => {
         e.preventDefault();
-        submitForm(location.value, price.value, rating.value);
+        submitForm(rating.value, price.value, distance.value);
       }}
     >
       <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
@@ -69,9 +69,9 @@ export default function SortForm({ submitForm }) {
           <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
             <SelectComponent
               label={'Distance'}
-              options={locations}
-              value={location}
-              onChange={(value) => setLocation(value)}
+              options={distances}
+              value={distance}
+              onChange={(value) => setDistance(value)}
             />
             <SelectComponent
               label={'Price'}
@@ -96,7 +96,7 @@ export default function SortForm({ submitForm }) {
             className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             onClick={(e) => {
               e.preventDefault();
-              submitForm(location.value, price.value, rating.value);
+              submitForm(rating.value, price.value, distance.value);
             }}
           >
             Submit
