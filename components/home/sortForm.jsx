@@ -21,11 +21,11 @@ const locations = [
     value: '1',
   },
   {
-    name: '1 - 5 km',
+    name: '0 - 5 km',
     value: '5',
   },
   {
-    name: '5 - 10 km',
+    name: '0 - 10 km',
     value: '10',
   },
   {

@@ -30,7 +30,10 @@ export default function KnowsForm({ submitForm }) {
       }}
     >
       <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
-        <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
+        <h3 className="mb-6 text-3xl font-bold text-center">
+          Let&apos;s choose the field of doctor
+        </h3>
+        <div className="pt-6 sm:mt-5 space-y-6 sm:space-y-5">
           <SelectComponent
             label={'Field of the doctor'}
             options={options}
@@ -49,7 +52,7 @@ export default function KnowsForm({ submitForm }) {
               submitForm(chosenValue.value);
             }}
           >
-            Submit
+            Next
           </button>
         </div>
       </div>
