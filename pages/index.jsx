@@ -8,7 +8,7 @@ export default function Home() {
         <title>Create Next App</title>
         <meta name="description" content="Med Diagnosis" />
       </Head>
-      <Layout> </Layout>
+      <Layout></Layout>
     </div>
   );
 }

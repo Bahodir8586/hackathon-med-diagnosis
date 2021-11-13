@@ -1,56 +1,45 @@
-import { Fragment, useState, useEffect } from "react";
-import { ToastContainer } from "react-toastify";
-import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, useState, useEffect } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
 import {
   HomeIcon,
   MenuIcon,
   UsersIcon,
   DocumentAddIcon,
   ChatIcon,
-  UserIcon,
-  OfficeBuildingIcon,
-  ClipboardListIcon,
-  ArrowCircleLeftIcon,
-  ArrowCircleRightIcon,
   XIcon,
-} from "@heroicons/react/outline";
-import { useRouter } from "next/router";
-import Link from "next/link";
+} from '@heroicons/react/outline';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Image from 'next/image';
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 const Layout = ({ pageTitle, ...props }) => {
   const router = useRouter();
   const [navigation, setNavigation] = useState([
     {
-      name: "Home",
-      href: "/",
+      name: 'Home',
+      href: '/',
       icon: HomeIcon,
       current: true,
     },
     {
-      name: "Doctors",
-      href: "/doctors",
+      name: 'Doctors',
+      href: '/doctors',
       icon: UsersIcon,
       current: false,
     },
     {
-      name: "Doctors",
-      href: "/doctors",
-      icon: UsersIcon,
-      current: false,
-    },
-    {
-      name: "Reviews",
-      href: "/reviews",
+      name: 'Reviews',
+      href: '/reviews',
       icon: ChatIcon,
       current: false,
     },
     {
-      name: "Reviews",
-      href: "/addReview",
+      name: 'Reviews',
+      href: '/addReview',
       icon: DocumentAddIcon,
       current: false,
     },
@@ -111,7 +100,9 @@ const Layout = ({ pageTitle, ...props }) => {
               </Transition.Child>
               <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
                 <div className="flex-shrink-0 flex items-center px-4">
-                  <img
+                  <Image
+                    height={32}
+                    width={160}
                     className="h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                     alt="Workflow"
@@ -123,17 +114,17 @@ const Layout = ({ pageTitle, ...props }) => {
                       <a
                         className={classNames(
                           item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                            ? 'bg-gray-900 text-white'
+                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          'group flex items-center px-2 py-2 text-base font-medium rounded-md'
                         )}
                       >
                         <item.icon
                           className={classNames(
                             item.current
-                              ? "text-gray-300"
-                              : "text-gray-400 group-hover:text-gray-300",
-                            "mr-4 flex-shrink-0 h-6 w-6"
+                              ? 'text-gray-300'
+                              : 'text-gray-400 group-hover:text-gray-300',
+                            'mr-4 flex-shrink-0 h-6 w-6'
                           )}
                           aria-hidden="true"
                         />
@@ -158,29 +149,31 @@ const Layout = ({ pageTitle, ...props }) => {
           <div className="flex flex-col h-0 flex-1 bg-gray-800">
             <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
               <div className="flex items-center flex-shrink-0 px-4">
-                <img
+                <Image
+                  height={32}
+                  width={160}
                   className="h-8 w-auto"
                   src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                   alt="Workflow"
                 />
               </div>
               <nav className="mt-5 flex-1 px-2 bg-gray-800 space-y-1">
-                {navigation[role].map((item) => (
+                {navigation.map((item) => (
                   <Link href={item.href} key={item.name}>
                     <a
                       className={classNames(
                         item.current
-                          ? "bg-gray-900 text-white"
-                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                        "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                          ? 'bg-gray-900 text-white'
+                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
                       )}
                     >
                       <item.icon
                         className={classNames(
                           item.current
-                            ? "text-gray-300"
-                            : "text-gray-400 group-hover:text-gray-300",
-                          "mr-3 flex-shrink-0 h-6 w-6"
+                            ? 'text-gray-300'
+                            : 'text-gray-400 group-hover:text-gray-300',
+                          'mr-3 flex-shrink-0 h-6 w-6'
                         )}
                         aria-hidden="true"
                       />
@@ -206,9 +199,7 @@ const Layout = ({ pageTitle, ...props }) => {
         <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
           <div className="py-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h1 className="text-2xl font-semibold text-gray-900">
-                {pageTitle}
-              </h1>
+              <h1 className="text-2xl font-semibold text-gray-900">{pageTitle}</h1>
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               {/* Replace with your content */}
