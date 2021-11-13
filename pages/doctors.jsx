@@ -12,7 +12,7 @@ const doctors = [
     price: '100 000',
   },
   {
-    name: 'Ben Parken',
+    name: 'Ben Parker',
     hospital: 'Tashkent Hospital 3',
     rating: '5.0',
     field: 'Oculist',
