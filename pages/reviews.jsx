@@ -1,14 +1,14 @@
-import Head from "next/head";
-import Layout from "../components/layout";
+import Head from 'next/head';
+import Layout from '../components/layout';
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Med Diagnosis" />
+        <title>Reviews</title>
+        <meta name="description" content="Reviews" />
       </Head>
-      <Layout pageTitle={"Reviews"}></Layout>
+      <Layout pageTitle={'Reviews'}></Layout>
     </div>
   );
 }

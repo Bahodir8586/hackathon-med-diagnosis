@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Med Diagnosis" />
+        <title>Doctors</title>
+        <meta name="description" content="Doctors" />
       </Head>
       <Layout pageTitle={"Doctors"}></Layout>
     </div>

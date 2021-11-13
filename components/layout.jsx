@@ -50,11 +50,14 @@ const Layout = ({ pageTitle, ...props }) => {
     const updatedNav = [...navigation];
     const curActive = updatedNav.find((el) => el.current);
     const curClicked = updatedNav.find((el) => el.href === router.pathname);
+    if (curClicked.href === curActive.href) {
+      return;
+    }
     curActive.current = false;
     curClicked.current = true;
     setNavigation(updatedNav);
     console.log(router.pathname);
-  }, [navigation, router.pathname]);
+  }, [router.pathname]);
 
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
