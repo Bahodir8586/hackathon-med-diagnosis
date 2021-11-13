@@ -27,14 +27,14 @@ const ratings = [
 ];
 
 export default function EmployeeForm({ submitForm }) {
-  const [rating, setRating] = useState(ratings[0].value);
+  const [rating, setRating] = useState(ratings[0]);
   const [review, setReview] = useState('');
   return (
     <form
       className="max-w-3xl mx-auto space-y-8 divide-y divide-gray-200 border p-8 bg-gray-50 shadow-md rounded-lg"
       onSubmit={(e) => {
         e.preventDefault();
-        submitForm(rating, review);
+        submitForm(rating.value, review);
       }}
     >
       <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
@@ -69,7 +69,7 @@ export default function EmployeeForm({ submitForm }) {
             className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             onClick={(e) => {
               e.preventDefault();
-              submitForm(rating, review);
+              submitForm(rating.value, review);
             }}
           >
             Submit

@@ -56,7 +56,6 @@ const Layout = ({ pageTitle, ...props }) => {
     curActive.current = false;
     curClicked.current = true;
     setNavigation(updatedNav);
-    console.log(router.pathname);
   }, [router.pathname]);
 
   return (
