@@ -11,27 +11,27 @@ import NextOurForm from '../components/home/nextOurForm';
 import ResultsTable from '../components/home/resultsTable';
 import LoaderComponent from '../components/home/loader';
 
-// const doctors = [
-//   {
-//     name: 'John Smith',
-//     hospital: 'Tashkent Hospital 1',
-//     rating: '4.0',
-//     field: 'Dentist',
-//     price: '100 000',
-//     location: '4.1 km',
-//   },
-//   {
-//     name: 'Ben York',
-//     hospital: 'Tashkent Hospital 3',
-//     rating: '5.0',
-//     field: 'Dentist',
-//     price: '150 000',
-//     location: '3.2 km',
-//   },
-// ];
+const defaultDoctors = [
+  {
+    name: 'John Smith',
+    hospital: 'Tashkent Hospital 1',
+    rating: '4.0',
+    field: 'Dentist',
+    price: '100 000',
+    location: '4.1 km',
+  },
+  {
+    name: 'Ben York',
+    hospital: 'Tashkent Hospital 3',
+    rating: '5.0',
+    field: 'Dentist',
+    price: '150 000',
+    location: '3.2 km',
+  },
+];
 
 export default function Home() {
-  const [doctors, setDoctors] = useState([]);
+  const [doctors, setDoctors] = useState(defaultDoctors);
   const [error, setError] = useState(false);
   const [field, setField] = useState(undefined);
   const [bodyParts, setBodyParts] = useState([]);
@@ -79,7 +79,7 @@ export default function Home() {
       setShowResults(true);
     } catch (error) {
       console.log(error);
-      setError(true);
+      // setError(true);
       setShowResults(true);
     }
   };
