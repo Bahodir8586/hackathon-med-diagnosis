@@ -9,7 +9,7 @@ import SortForm from '../components/home/sortForm';
 import OurForm from '../components/home/ourForm';
 import NextOurForm from '../components/home/nextOurForm';
 import ResultsTable from '../components/home/resultsTable';
-import Body from '@/components/home/body';
+import LoaderComponent from '../components/home/loader';
 
 // const doctors = [
 //   {
@@ -95,7 +95,12 @@ export default function Home() {
         {showOurForm && <OurForm submitForm={submitOur} />}
         {showSortForm && <SortForm submitForm={submitSort} />}
         {showNextOur && <NextOurForm submitForm={submitNextOur} />}
-        {showLoader && <h3 className="my-16 text-4xl font-bold text-center">Loading</h3>}
+        {showLoader && (
+          <>
+            <h3 className="my-6 text-4xl font-bold text-center">Loading</h3>
+            <LoaderComponent />
+          </>
+        )}
         {showResults && (
           <>
             <h2 className="mb-4 text-center text-3xl font-semibold">Your results !!!</h2>
