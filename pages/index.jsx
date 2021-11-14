@@ -6,7 +6,10 @@ import Layout from '../components/layout';
 import FirstForm from '../components/home/firstForm';
 import KnowsForm from '../components/home/knowsForm';
 import SortForm from '../components/home/sortForm';
+import OurForm from '../components/home/ourForm';
+import NextOurForm from '../components/home/nextOurForm';
 import ResultsTable from '../components/home/resultsTable';
+import Body from '@/components/home/body';
 
 // const doctors = [
 //   {
@@ -31,12 +34,16 @@ export default function Home() {
   const [doctors, setDoctors] = useState([]);
   const [error, setError] = useState(false);
   const [field, setField] = useState(undefined);
+  const [bodyParts, setBodyParts] = useState([]);
 
   const [showFirstForm, setShowFirstForm] = useState(true);
   const [showKnowsForm, setShowKnowsForm] = useState(false);
   const [showOurForm, setShowOurForm] = useState(false);
+  const [showNextOur, setShowNextOur] = useState(false);
+  const [showLoader, setShowLoader] = useState(false);
   const [showSortForm, setShowSortForm] = useState(false);
   const [showResults, setShowResults] = useState(false);
+
   const submitFirst = (knows) => {
     setShowFirstForm(false);
     if (knows) {
@@ -52,7 +59,16 @@ export default function Home() {
     setShowKnowsForm(false);
     setShowSortForm(true);
   };
-  const submitOur = () => {};
+  const submitOur = (bodyParts) => {
+    setBodyParts(bodyParts);
+    setShowOurForm(false);
+    setShowNextOur(true);
+  };
+  const submitNextOur = (...values) => {
+    console.log(values);
+    setShowNextOur(false);
+    setShowLoader(true);
+  };
   const submitSort = async (rating, price, distance) => {
     setError(false);
     console.log(`rating: ${rating}, price: ${price}, distance: ${distance}, field: ${field}`);
@@ -76,8 +92,10 @@ export default function Home() {
       <Layout pageTitle={'Home'}>
         {showFirstForm && <FirstForm submitForm={submitFirst} />}
         {showKnowsForm && <KnowsForm submitForm={submitKnows} />}
-        {showOurForm && <FirstForm submitForm={submitOur} />}
+        {showOurForm && <OurForm submitForm={submitOur} />}
         {showSortForm && <SortForm submitForm={submitSort} />}
+        {showNextOur && <NextOurForm submitForm={submitNextOur} />}
+        {showLoader && <h3 className="my-16 text-4xl font-bold text-center">Loading</h3>}
         {showResults && (
           <>
             <h2 className="mb-4 text-center text-3xl font-semibold">Your results !!!</h2>
