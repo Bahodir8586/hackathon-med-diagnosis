@@ -74,8 +74,11 @@ export default function Home() {
     console.log(`rating: ${rating}, price: ${price}, distance: ${distance}, field: ${field}`);
     setShowSortForm(false);
     try {
-      const results = await axios.get('/url');
-      setDoctors(results);
+      const results = await axios.get(
+        `http://10.18.32.117:8080/api/getDoc?rating=${rating}&price=${price}&distance=${distance}&field=${field}`
+      );
+      console.log(results);
+      setDoctors(results.data);
       setShowResults(true);
     } catch (error) {
       console.log(error);

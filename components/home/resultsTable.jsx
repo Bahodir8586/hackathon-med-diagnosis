@@ -69,10 +69,10 @@ const ResultsTable = ({ doctors, error }) => {
                         {doctor.rating}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {doctor.location}
+                        {doctor.distance} km
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {doctor.price}
+                        {doctor.price} so&apos;m
                       </td>
                     </tr>
                   ))}

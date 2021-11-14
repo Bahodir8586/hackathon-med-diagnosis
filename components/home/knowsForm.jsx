@@ -4,19 +4,19 @@ import SelectComponent from '../selectComponent.jsx';
 const options = [
   {
     name: 'Dentist',
-    value: 'dentist',
+    value: 'Dentist',
   },
   {
     name: 'Pulmanologist',
-    value: 'pulmanalogist',
+    value: 'Pulmanalogist',
   },
   {
     name: 'Oculist',
-    value: 'oculist',
+    value: 'Oculist',
   },
   {
     name: 'Surgeon',
-    value: 'surgeon',
+    value: 'Surgeon',
   },
 ];
 export default function KnowsForm({ submitForm }) {
