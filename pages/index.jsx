@@ -105,6 +105,9 @@ export default function Home() {
         {showLoader && (
           <>
             <h3 className="my-6 text-4xl font-bold text-center">Loading</h3>
+            <p className="text-center text-2xl font-medium mb-4">
+              Your request has been sent to our AI. Waiting for the response
+            </p>
             <LoaderComponent />
           </>
         )}
